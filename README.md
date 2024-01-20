@@ -5,7 +5,7 @@ Essentially, this is a resizable array of elements of your choosing that is auto
 - how to use
 
 - sample
-```
+```c
 #include <stdio.h>
 #define TYPE int
 #define CONTROLLER fn
