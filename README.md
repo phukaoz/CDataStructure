@@ -2,9 +2,9 @@
 C header library for dynamic array.\
 Essentially, this is a resizable array of elements of your choosing that is automatically.
 
-# how to use
+- how to use
 
-# sample
+- sample
 ```
 #include <stdio.h>
 #define TYPE int
@@ -26,3 +26,5 @@ int main(){
 	}
 }
 ```
+
+# queue.h
