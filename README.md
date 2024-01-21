@@ -63,6 +63,11 @@ Essentially, this is a resizable array of elements of your choosing that is auto
     ```c
     controller.empty(vector_name);
     ```
+  - ### find( value )
+    find the first element with the desired value.
+    ```c
+    controller.find(vector_name, value);
+    ```
 
 - ## sample
   ```c
