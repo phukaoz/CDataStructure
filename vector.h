@@ -74,6 +74,18 @@ TYPE* vector_end(vector vector_name){
     return &(vector_name->array[vector_name->size]);
 }
 
+void vector_set(vector vector_name,size_t index, TYPE value){
+    if(index >= vector_name->size){
+        fprintf(stderr, "index out of bound.");
+        exit(-1);
+    }
+    if(index < 0){
+        fprintf(stderr, "invalid index.");
+        exit(-1);
+    }
+    vector_name->array[index] = value;
+}
+
 typedef struct{
     void (*init)(vector);
     void (*push_back)(vector, TYPE);
@@ -83,6 +95,7 @@ typedef struct{
     bool (*empty)(vector);
     TYPE* (*begin)(vector);
     TYPE* (*end)(vector);
+    void (*set)(vector);
 }vector_controller;
 
 vector_controller CONTROLLER;
@@ -96,6 +109,7 @@ void vector_controller_init(){
     CONTROLLER.empty = vector_empty;
     CONTROLLER.begin = vector_begin;
     CONTROLLER.end = vector_end;
+    CONTROLLER.set = vector_set;
 }
 
 
