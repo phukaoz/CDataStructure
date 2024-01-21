@@ -74,14 +74,14 @@ Essentially, this is a resizable array of elements of your choosing that is auto
   
   int main(){
   	vector_controller_init();
-  	fn.init(&v);
+  	fn.init(v);
   
   	for(int i=0;i<10;i++){
   		fn.push_back(v,i);
   	}
-  	while(!vcontrol.empty(&v)){
+  	while(!vcontrol.empty(v)){
   		printf("%d ",fn.back(v));
-  		fn.pop_back(&v);
+  		fn.pop_back(v);
   	}
   }
   ```
