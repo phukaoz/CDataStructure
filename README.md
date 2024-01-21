@@ -16,17 +16,6 @@ Essentially, this is a resizable array of elements of your choosing that is auto
    #include "vector.h"
    vector vector_name;
    ```
-  note that you need to **re-include** if you want to change the TYPE of vector
-   ```c
-   #define TYPE int
-   #include "vector.h"
-   vector vector_int1;
-   vector vector_int2;
-   
-   #define TYPE char
-   #include "vector.h"
-   vector vector_char;
-  ```
 - ## feature
   You have access to all the following functions.
   - ### init( )
