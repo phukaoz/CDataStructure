@@ -1,17 +1,17 @@
-# vector.h
-C header library for dynamic array.\
+# vector
+***vector.h*** is a C header library for dynamic array.\
 Essentially, this is a resizable array of elements of your choosing that is automatically.
 
 - ## how to use
-  define **TYPE** for data type of vector.
+  define ***TYPE*** for data type of vector.
    ```c
    #define TYPE type_name
    ```
-  define **CONTROLLER** for name vector's controller.
+  define ***CONTROLLER*** for name vector's controller.
    ```c
    #define TYPE controller_name
    ```
-  include **vector.h** and declare vector.
+  include ***vector.h*** and declare vector.
    ```c
    #include "vector.h"
    vector vector_name;
