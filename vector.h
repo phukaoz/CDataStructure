@@ -95,7 +95,7 @@ typedef struct{
     bool (*empty)(vector);
     TYPE* (*begin)(vector);
     TYPE* (*end)(vector);
-    void (*set)(vector);
+    void (*set)(vector, size_t, TYPE);
 }vector_controller;
 
 vector_controller CONTROLLER;
