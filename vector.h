@@ -112,7 +112,6 @@ void vector_controller_init(){
     CONTROLLER.set = vector_set;
 }
 
-
 #endif
 #undef TYPE
 #undef CONTROLLER
