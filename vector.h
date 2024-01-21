@@ -25,7 +25,7 @@ void vector_init(vector vector_name){
     vector_name->array = (TYPE*)malloc(vector_name->capacity*vector_name->data_size);
 }
 
-void vector_push_back(vector vector_name,TYPE value){
+void vector_push_back(vector vector_name, TYPE value){
     if(vector_name->size == vector_name->capacity){
         vector_name->capacity = (vector_name->capacity << 1);
         vector_name->array = (TYPE*)realloc(vector_name->array,vector_name->capacity*vector_name->data_size);
@@ -54,7 +54,7 @@ bool vector_empty(vector vector_name){
     return (vector_name->size == 0 ? true : false);
 }
 
-TYPE vector_get(vector vector_name,size_t index){
+TYPE vector_get(vector vector_name, size_t index){
     if(index >= vector_name->size){
         fprintf(stderr, "index out of bound.");
         exit(-1);
@@ -74,7 +74,7 @@ TYPE* vector_end(vector vector_name){
     return &(vector_name->array[vector_name->size]);
 }
 
-void vector_set(vector vector_name,size_t index, TYPE value){
+void vector_set(vector vector_name, size_t index, TYPE value){
     if(index >= vector_name->size){
         fprintf(stderr, "index out of bound.");
         exit(-1);
@@ -84,6 +84,16 @@ void vector_set(vector vector_name,size_t index, TYPE value){
         exit(-1);
     }
     vector_name->array[index] = value;
+}
+
+TYPE* vector_find(vector vector_name, TYPE value){
+    TYPE *it;
+    for(it = vector_begin(vector_name); it!=vector_end(vector_name); it++){
+        if(*it == value){
+            break;
+        }
+    }
+    return it;
 }
 
 typedef struct{
@@ -96,6 +106,7 @@ typedef struct{
     TYPE* (*begin)(vector);
     TYPE* (*end)(vector);
     void (*set)(vector, size_t, TYPE);
+    TYPE* (*find)(vector, TYPE);
 }vector_controller;
 
 vector_controller CONTROLLER;
@@ -110,6 +121,7 @@ void vector_controller_init(){
     CONTROLLER.begin = vector_begin;
     CONTROLLER.end = vector_end;
     CONTROLLER.set = vector_set;
+    CONTROLLER.find = vector_find;
 }
 
 #endif
