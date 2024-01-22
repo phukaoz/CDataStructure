@@ -32,12 +32,12 @@ void init(void){
     name_ = (type_*)malloc(capacity*sizeof(type_));
 }
 
-void push_back(type_ value){
+void push_back(type_ value_){
     if(size == capacity){
         capacity = capacity<<1;
         name_ = (type_*)realloc(name_, capacity*sizeof(type_));
     }
-    name_[size++] = value;
+    name_[size++] = value_;
 }
 
 void pop_back(void){
@@ -64,22 +64,22 @@ type_* end(void){
     return &(name_[size]);
 }
 
-type_* find(type_ target){
+type_* find(type_ target_){
     type_ *ptr_ = begin();
     for(ptr_ = begin();ptr_ != end();ptr_++){
-        if(*ptr_ == target){
+        if(*ptr_ == target_){
             break;
         }
     }
     return ptr_;
 }
 
-void resize(size_t new_size){
-    if(new_size <= size){
+void resize(size_t new_size_){
+    if(new_size_ <= size){
         fprintf(stderr,"invalid size.");
         exit(-1);
     }
-    capacity = new_size;
+    capacity = new_size_;
     name_ = (type_*)realloc(name_,capacity*sizeof(type_));
 }
 
@@ -95,3 +95,5 @@ void resize(size_t new_size){
 #undef init
 #undef find
 #undef resize
+#undef str_concat
+#undef concat
