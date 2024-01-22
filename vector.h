@@ -20,6 +20,7 @@
 #define begin concat(name_, begin)
 #define end concat(name_, end)
 #define find concat(name_, find)
+#define resize concat(name_, resize)
 
 size_t capacity;
 size_t size;
@@ -73,6 +74,15 @@ type_* find(type_ target){
     return ptr_;
 }
 
+void resize(size_t new_size){
+    if(new_size <= size){
+        fprintf(stderr,"invalid size.");
+        exit(-1);
+    }
+    capacity = new_size;
+    name_ = (type_*)realloc(name_,capacity*sizeof(type_));
+}
+
 #undef name_
 #undef type_
 #undef size
@@ -83,3 +93,5 @@ type_* find(type_ target){
 #undef end
 #undef back
 #undef init
+#undef find
+#undef resize
