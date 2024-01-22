@@ -5,7 +5,7 @@
 #include <string.h>
 #include <stddef.h>
 
-void* swap(void* first_element_, void* second_element_, size_t size_of_element_){
+void swap(void* first_element_, void* second_element_, size_t size_of_element_){
     void* temp_ = malloc(size_of_element_);
     memcpy(temp_, first_element_, size_of_element_);
     memcpy(first_element_, second_element_, size_of_element_);
