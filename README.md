@@ -17,7 +17,7 @@ C header library for dynamic array (using macros in C).\
   ```
   now, you can access your vector and method-like functions.\
   you can access your vector like normal array ```vector[index]```\
-  you also can call a function with ```vector's name``` ```_``` ```function's name```
+  you can also call a function with ```vector's name``` ```_``` ```function's name```
   
 
 - ## feature and sample
