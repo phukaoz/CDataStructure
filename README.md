@@ -1,6 +1,6 @@
 # vector.h
 C header library for dynamic array (using macros in C).\
-**dyanmic array** is a resizalbe array automatically.
+**dyanmic array** is an array that automatically resize.
 
 - ## how to use
   first, define your vector name through ```name_``` macro.
