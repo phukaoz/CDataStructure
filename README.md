@@ -1,6 +1,9 @@
 # vector.h
 C header library for dynamic array (using macros in C).\
-**dyanmic array** is an array that automatically resize.
+**dyanmic array** is an array that automatically resize.\
+\
+currently, my vector is not support 2D vector.\
+I'm looking to make it as simple and easy to use as possible.
 
 - ## how to use
   first, define your vector name through ```name_``` macro.
