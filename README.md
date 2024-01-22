@@ -1,5 +1,5 @@
 # vector.h
-C header library for dynamic array (using macros in C).
+C header library for dynamic array (using macros in C).\
 **dyanmic array** is a resizalbe array automatically.
 
 - ## how to use
