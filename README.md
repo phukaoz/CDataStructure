@@ -72,3 +72,17 @@ C header library for dynamic array (using macros in C).\
     ptr++;
   }
   ```
+
+  ### find( target )
+  return a pointer pointing to the first element that its value is the same as the target.\
+  if not found the returned pointer points to the end of your vector.
+  ```c
+  int* ptr = vec_find(5);
+  ```
+
+  ### resize( new_size )
+  set the size of your vector to new size.
+  ```c
+  int n = 15;
+  vec_resize(n);
+  ```
