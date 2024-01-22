@@ -1,3 +1,22 @@
+# algorithm.h
+C header libary that defines a bunch of functions.\
+designed to help make work more convenient.
+
+- ## how to use
+  include algorithm.h libary.
+  ```c
+  #include "algorithm.h"
+  ```
+
+- ## feature and sample
+  ### swap( first , second , element_size )
+  exchange values of two objects.
+  ```c
+  int a = 10;
+  int b = 25;
+  swap(&a, &b, sizeof(int));
+  ```
+
 # vector.h
 C header library for dynamic array (using macros in C).\
 **dyanmic array** is an array that automatically resize.\
