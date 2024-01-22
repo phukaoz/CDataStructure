@@ -19,6 +19,7 @@
 #define back concat(name_, back)
 #define begin concat(name_, begin)
 #define end concat(name_, end)
+#define find concat(name_, find)
 
 size_t capacity;
 size_t size;
@@ -60,6 +61,16 @@ type_* begin(void){
 
 type_* end(void){
     return &(name_[size]);
+}
+
+type_* find(type_ target){
+    type_ *ptr_ = begin();
+    for(ptr_ = begin();ptr_ != end();ptr_++){
+        if(*ptr_ == target){
+            break;
+        }
+    }
+    return ptr_;
 }
 
 #undef name_
