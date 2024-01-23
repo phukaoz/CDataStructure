@@ -91,6 +91,16 @@ C header library for binary heap.\
   ```
   time complexity : O(1)
 
+  ### empty( )
+  check if your priority queue is empty.
+  ```c
+  while( !pq_empty() ){
+    /*
+      do something...
+    */
+  }
+  ```
+
 # vector.h
 C header library for dynamic array (using macros in C).\
 **dyanmic array** is an array that automatically resize.\
@@ -159,7 +169,7 @@ I'm looking to make it as simple and easy to use as possible.
   ### empty( )
   check if your vector is empty.
   ```c
-  while( vec_empty()){
+  while( !vec_empty()){
     /*
       do something...
     */
