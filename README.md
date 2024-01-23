@@ -46,7 +46,7 @@ C header library for binary heap.\
   ```c
   #include "functional.h"
   ```
-  now you can access all following compare functions.
+  now you can access all following compare functions.\
   ```greater_equal_{type}``` ```greater_{type}```  ```less_{type}``` ```less_equal_{type}``` ```equal_{type}``` ```not_equal_{type}```  
   initialize your priority queue through init( ) function.
   ```c
