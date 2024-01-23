@@ -156,6 +156,16 @@ I'm looking to make it as simple and easy to use as possible.
   }
   ```
 
+  ### empty( )
+  check if your vector is empty.
+  ```c
+  while( vec_empty()){
+    /*
+      do something...
+    */
+  }
+  ```
+
   ### begin( )
   return a pointer pointing to the first element in your vector.
   ```c

@@ -21,6 +21,7 @@
 #define end concat(name_, end)
 #define find concat(name_, find)
 #define resize concat(name_, resize)
+#define empty concat(name_, empty)
 
 size_t capacity;
 size_t size;
@@ -64,6 +65,10 @@ type_* end(void){
     return &(name_[size]);
 }
 
+int empty(void){
+    return (size == 0);
+}
+
 type_* find(type_ target_){
     type_ *ptr_ = begin();
     for(ptr_ = begin();ptr_ != end();ptr_++){
@@ -97,3 +102,4 @@ void resize(size_t new_size_){
 #undef resize
 #undef str_concat
 #undef concat
+#undef empty
