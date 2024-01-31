@@ -41,7 +41,7 @@ int empty(vector* vect){
 }
 
 void pop_back(vector* vect){
-    if(!empty(vect)){
+    if(empty(vect)){
         fprintf(stderr,"Can't pop, vector is empty.");
         exit(EXIT_FAILURE);
     }
