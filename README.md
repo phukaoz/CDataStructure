@@ -1,4 +1,5 @@
-# Data Structure for C language
+# Data Structures for C language
+Some data structures for C language, reference from C++.
 
 ## VECTOR
 - ### how to use
