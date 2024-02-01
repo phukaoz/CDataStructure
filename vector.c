@@ -5,85 +5,60 @@
 
 #define type int
 
-typedef struct{
-    size_t size;
-    size_t capacity;
-    type *array;
-}vector;
+type* vector;
+size_t size;
+size_t capacity;
 
-vector* vector_create(size_t initial_capacity){
-    vector* new_vector = (vector*)malloc(sizeof(vector));
-    new_vector->capacity = initial_capacity;
-    new_vector->array = (type*)malloc(sizeof(type) * new_vector->capacity);
-    new_vector->size = 0;
-    return new_vector;
-}
-
-void vector_free(vector* vect){
-    free(vect->array);
-    free(vect);
-}
-
-void push_back(vector* vect, type value){
-    if(vect->size >= vect->capacity){
-        if(vect->capacity == 0){
-            vect->capacity = 1;
-        }else{
-            vect->capacity = vect->capacity << 1; //double capacity
-        }
-        vect->array = (type*)realloc(vect->array, vect->capacity*sizeof(type));
+void push(type value){
+    if(size >= capacity){
+        capacity = capacity << 1;
+        vector = (type*)realloc(vector,capacity);
     }
-    vect->array[vect->size++] = value;
+    vector[size++] = value;
 }
 
-int empty(vector* vect){
-    return (vect->size == 0);
-}
-
-void pop_back(vector* vect){
-    if(empty(vect)){
+void pop(){
+    if(size <= 0){
         fprintf(stderr,"Can't pop, vector is empty.");
-        exit(EXIT_FAILURE);
+        return;
     }
-    vect->size--;
+    size--;
 }
 
-type* begin(vector* vect){
-    return vect->array;
+type back(){
+    return vector[size-1];
 }
 
-type* end(vector* vect){
-    return &(vect->array[vect->size]);
+type* begin(){
+    return vector;
 }
 
-void delete(vector* vect,size_t position){
-    if(position >= vect->size){
-        fprintf(stderr,"Invalid positon for delete().");
-        exit(EXIT_FAILURE);
+type* end(){
+    return &(vector[size]);
+}
+
+type* find(type target){
+    type* it = begin();
+    while(it != end()){
+        if(*it == target){
+            break;
+        }
+        it++;
     }
-    for(size_t i = position+1;i<vect->size;i++){
-        vect->array[i-1] = vect->array[i];
-    }
-    vect->size--;
+    return it;
 }
 
-size_t size(vector* vect){
-    return vect->size;
-}
-
-type vget(vector* vect,size_t position){
-    if(position >= vect->size){
-        fprintf(stderr,"Invalid position for vget().");
-        exit(EXIT_FAILURE);
+void delete(size_t index){
+    if(index < 0 || index >= size){
+        fprintf(stderr,"Invalid index for delete.");
+        return;
     }
-    return vect->array[position];
+    for(size_t i = index+1;index<size;i++){
+        vector[i-1] = vector[i];
+    }
+    size--;
 }
 
 int main(void){
-    vector* v = vector_create(0);
-    for(int i=0;i<20;i++){
-        push_back(v,i+1);
-    }
-    delete(v,12);printf("\n");
     return 0;
 }
